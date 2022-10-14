@@ -1,0 +1,9 @@
+img {
+    padding: 10px 10px 10px 10px;
+    width: 100px;
+    height: 200px;
+}
+
+.click-col {
+    cursor: pointer;
+}

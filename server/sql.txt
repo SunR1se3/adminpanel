@@ -1,0 +1,1 @@
+SELECT p.id, p.title, p.description, p.photo, p.url_card, p.price, p.status, c.title as title_catgory, b.title as title_brand FROM product p, brand b, category c WHERE p.categoryId=c.id AND p.brandId=b.id ORDER BY p.price

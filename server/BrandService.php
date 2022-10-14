@@ -1,0 +1,25 @@
+<?php
+
+include_once 'DataAccess/DB.php';
+
+class BrandService {
+    private $db;
+
+    public function __construct() {
+        $this->db = new DB();
+    }
+
+    public function GetAll() {
+        $stmt = $this->db->Select("SELECT * FROM brand");
+        $data = array();
+
+        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+            array_push($data, $row);
+        }
+        $this->db->CloseConnection();
+        return $data;
+    }
+}
+
+$brandService = new BrandService();
+$data_brand = $brandService->GetAll();
